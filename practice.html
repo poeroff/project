@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        <title> Introduction Site </title> 
+        <title> Choi Taeyoung Introduction Site </title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+                /* Style the header */
+            header {
+                background-color: #666;
+                padding: 30px;
+                font-size: 35px;
+                color:black
+            }
+            header > .Home{
+                display: inline-block;
+                padding: 10px;
+                color: black;
+                
+            }
+            header > .About{
+                display: inline;
+                float: right;
+                padding: 10px;
+                
+            }
+            header > .Contact{
+                
+                display: inline;
+                float: right;
+                padding: 10px;
+            }
+
+                /* Create two columns/boxes that floats next to each other */
+            nav {
+                float: left;
+                width: 25%;
+                height: 675px; /* only for demonstration, should be removed */
+                background: #ccc;
+                padding: 20px;
+            }
+
+                /* Style the list inside the menu */
+            
+            nav > .image {
+                border-radius: 50% 50%;
+                width: 250px;
+                height: 250px;
+                margin-left: 95px; 
+                
+            }
+            nav > p{
+                text-align: center;
+            }
+
+            article {
+                float: left;
+                padding: 20px;
+                width: 75%;
+                height: 675px;
+                background-color: #f1f1f1;
+                
+            }
+
+                /* Clear floats after the columns */
+            section::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+                /* Style the footer */
+            footer {
+                background-color: #777;
+                padding: 10px;
+                text-align: center;
+                color: white;
+            }
+            .view{
+                display: none;
+            }
+            .active{
+                display: inline;
+            }
+        </style>
+        <script>
+            function showView(viewId){
+                $('.view').removeClass('active');
+                $('#' + viewId).addClass('active');  
+            }
+            $(document).ready(function(){
+                // 현재 시간 출력 함수
+                function displayCurrentTime() {
+                    var currentTime = new Date();
+                    var hours = currentTime.getHours();
+                    var minutes = currentTime.getMinutes();
+                    var seconds = currentTime.getSeconds();
+
+                    // 시간을 두 자리로 포맷팅
+                    hours = (hours < 10 ? "0" : "") + hours;
+                    minutes = (minutes < 10 ? "0" : "") + minutes;
+                    seconds = (seconds < 10 ? "0" : "") + seconds;
+
+                    // 시간을 출력할 요소 선택하여 현재 시간 설정
+                    $('#currentTime').text("현재 시간 :"+hours + ":" + minutes + ":" + seconds);
+                }
+
+                // 페이지 로드 시 현재 시간 출력
+                displayCurrentTime();
+
+                // 1초마다 현재 시간 갱신
+                setInterval(displayCurrentTime, 1000);
+            });
+
+        </script>
+    </head>
+    <body>
+
+        <header>
+            <div class ="Home"><a href="#" onclick="showView('home')" style="color: #ccc;">Home</a></div>
+            <div class ="About"><a href="#" onclick="showView('about')" style="color: #ccc;">About</a></div>
+            <div class ="Contact"><a href="#" onclick="showView('contact')"style="color: #ccc;" > Study </a></div>
+
+        </header>
+        <section>
+            
+            <nav>
+                <p class="title"> CHOI TAE YOUNG's PAGE </p>
+                <img src = "web.jpg" class="image">
+                <p> I am a student whose dream is to become an information security expert.</p>
+                <p> EMAIL : chlxodud04@naver.com</p>
+                
+              
+            </nav>
+            
+            <article>
+                <section id="home" class="view active">
+                    <h1> Major(Computer science) </h1>
+                    <p> I entered the Department of Computer Engineering at <a href =" https://it.kangwon.ac.kr/it/department-intro/department03.do">Kangwon National University</a> in 2021 because I am interested in security, and I am especially interested in network and web security. So I am studying security hard in the security club run by a professor at Kangwon National University. </p>
+                    <h1> Interest </h1>
+                    <p> I am interested in physical activities and especially like soccer and training. And what I like more than physical activity is games. </p>
+                    <h1> one's work</h1>
+                    <p> 2023 : Studying security and currently working on a bitcoin auto-trading program. </p>
+                </section>
+                  
+                <section id="about" class="view">
+                    <h1>About Us</h1>
+                    <p>This is the about page of my single page application.</p>
+                </section>
+                  
+                <section id="contact" class="view">
+                    <h1>Security study site</h1>
+                    <a href ="https://dreamhack.io/"><img src="dreamhack.PNG"></a>
+                    
+                </section>
+            </article>
+        </section>
+        <footer>
+            <p>Made by Choi Tae young <div id="currentTime"></div> </p>
+        </footer>
+        
+        
+           
+            
+
+          
+        
+
+    </body>
+</html>
