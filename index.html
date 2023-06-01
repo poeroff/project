@@ -7,7 +7,24 @@
         <title> Introduction Site </title> 
         <title> Choi Taeyoung Introduction Site </title>
         <style>
-            
+           @media (max-width: 768px) { 
+             /* 스마트폰 화면 크기에 맞게 조정 */
+            .mobile-nav {
+                display: none;
+                float: right;
+                }
+            article{
+                width: 100%;
+
+            }
+            }
+            @media (min-width: 768px) { 
+             /* 스마트폰 화면 크기에 맞게 조정 */
+            .MobilePage {
+                display: none;
+              
+                }
+            }
             * {
                 box-sizing: border-box;
             }
@@ -41,6 +58,7 @@
                 float: right;
                 padding: 10px;
             }
+           
 
                 /* Create two columns/boxes that floats next to each other */
             nav {
@@ -59,6 +77,19 @@
                 height: 250px;
                 margin-left: 95px; 
                 
+                
+                
+            }
+            .view {
+            display: none;
+            }
+
+            .active {
+            display: block;
+            }
+            .image {
+                max-width: 100%;
+                height: auto;
             }
             nav > p{
                 text-align: center;
@@ -131,13 +162,15 @@
             <div class ="Home"><a href="#" onclick="showView('home')" style="color: #ccc;">Home</a></div>
             <div class ="About"><a href="#" onclick="showView('about')" style="color: #ccc;">TIP</a></div>
             <div class ="Contact"><a href="#" onclick="showView('contact')"style="color: #ccc;" > Study </a></div>
+            <div class="MobilePage"><a href="#" onclick="showView('mobile')" style="color: #ccc;">Introduce</a></div>
+        
 
         </header>
         <section>
             
-            <nav>
+            <nav class ="mobile-nav">
                 <p class="title"> CHOI TAE YOUNG's PAGE </p>
-                <img src = "capture.jpg" class="image">
+                <img src = "capture.jpg" class="image" >
                 <p> I am a student whose dream is to become an information security expert.</p>
                 <p> EMAIL : chlxodud04@naver.com</p>
                 
@@ -147,13 +180,20 @@
             <article>
                 <section id="home" class="view active">
                     <h1> Major(Computer science) </h1>
-                    <h1> h12 </h1>
                     <p> I entered the Department of Computer Engineering at <a href =" https://it.kangwon.ac.kr/it/department-intro/department03.do">Kangwon National University</a> in 2021 because I am interested in security, and I am especially interested in network and web security. So I am studying security hard in the security club run by a professor at Kangwon National University. </p>
                     <h1> Interest </h1>
                     <p> I am interested in physical activities and especially like soccer and training. And what I like more than physical activity is games. </p>
                     <h1> one's work</h1>
                     <p> 2023 : Studying security and currently working on a bitcoin auto-trading program. </p>
                 </section>
+
+                <section id="mobile" class="view">
+                    <p class="title"> CHOI TAE YOUNG's PAGE </p>
+                    <img src = "capture.jpg" class="image" >
+                    <p> I am a student whose dream is to become an information security expert.</p>
+                    <p> EMAIL : chlxodud04@naver.com</p>
+                </section>
+              
                   
                 <section id="about" class="view">
                     <h1> #TIP </h1>
